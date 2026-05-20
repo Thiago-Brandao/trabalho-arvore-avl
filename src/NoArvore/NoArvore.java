@@ -1,9 +1,11 @@
+package NoArvore;
+
 public class NoArvore {
 
-    int valor;
-    NoArvore esquerda;
-    NoArvore direita;
-    int altura;
+    public int valor;
+    public NoArvore esquerda;
+    public NoArvore direita;
+    public int altura;
 
     public NoArvore(int valor) {
         this.valor = valor;

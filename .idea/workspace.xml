@@ -2,10 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8763619f-d0e6-4aa9-bd4d-0d63557b7d93" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/Arvore.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/NoArvore.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Teste.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/NoArvore.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Arvore.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Arvore/Arvore.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/NoArvore.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/NoArvore/NoArvore.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -36,11 +35,12 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
-    "Application.Teste.executor": "Run",
+    "Application.Teste.executor": "Debug",
     "ModuleVcsDetector.initialDetectionPerformed": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.git.unshallow": "true",
     "RunOnceActivity.typescript.service.memoryLimit.init": "true",
+    "codeWithMe.voiceChat.enabledByDefault": "false",
     "git-widget-placeholder": "main",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "C:/Users/20241080080010/Desktop/trabalho-arvore-avl",

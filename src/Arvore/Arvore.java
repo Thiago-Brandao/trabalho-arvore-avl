@@ -1,3 +1,7 @@
+package Arvore;
+
+import NoArvore.NoArvore;
+
 public class Arvore {
 
     private NoArvore raiz;
