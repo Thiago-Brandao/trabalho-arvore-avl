@@ -1,23 +1,25 @@
-package NoArvore;
+package domain;
 
 public class NoArvore {
 
-    public int valor;
-    public NoArvore esquerda;
-    public NoArvore direita;
-    public int altura;
+    private NoArvore esquerda;
+    private NoArvore direita;
+    private int altura;
+    private Produto produto;
 
-    public NoArvore(int valor) {
-        this.valor = valor;
+    public NoArvore(Produto produto) {
+        this.produto = produto;
+        this.altura = 1;
     }
 
-    public int getValor() {
-        return valor;
+    public Produto getProduto() {
+        return produto;
     }
 
-    public void setValor(int valor) {
-        this.valor = valor;
+    public void setProduto(Produto produto) {
+        this.produto = produto;
     }
+
 
     public NoArvore getEsquerda() {
         return esquerda;
