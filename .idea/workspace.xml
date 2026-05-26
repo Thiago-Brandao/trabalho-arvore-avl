@@ -1,13 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="8763619f-d0e6-4aa9-bd4d-0d63557b7d93" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/Estoque.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/domain/Arvore.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/domain/ProdutoService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Arvore/Arvore.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/NoArvore/NoArvore.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/domain/NoArvore.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Estoque.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Estoque.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/domain/Arvore.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/domain/Arvore.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/domain/NoArvore.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/domain/NoArvore.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/domain/Produto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/domain/Produto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/domain/ProdutoService.java" beforeDir="false" />
     </list>
     <list id="1deede9e-bcd4-485f-a8a5-349b2d02ff33" name="Changes by THIAGO" comment="" />
     <option name="SHOW_DIALOG" value="false" />
@@ -37,31 +40,44 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Application.Teste.executor&quot;: &quot;Debug&quot;,
-    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.typescript.service.memoryLimit.init&quot;: &quot;true&quot;,
-    &quot;codeWithMe.voiceChat.enabledByDefault&quot;: &quot;false&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/20241080080010/Desktop/trabalho-arvore-avl&quot;,
-    &quot;onboarding.tips.debug.path&quot;: &quot;C:/Users/20241080080010/Desktop/trabalho-arvore-avl/src/Main.java&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;run.code.analysis.last.selected.profile&quot;: &quot;pProject Default&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.Estoque.executor": "Run",
+    "Application.Teste.executor": "Debug",
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "RunOnceActivity.typescript.service.memoryLimit.init": "true",
+    "codeWithMe.voiceChat.enabledByDefault": "false",
+    "git-widget-placeholder": "main",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Users/20241080080010/Desktop/trabalho-arvore-avl",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "onboarding.tips.debug.path": "C:/Users/20241080080010/Desktop/trabalho-arvore-avl/src/Main.java",
+    "project.structure.last.edited": "Libraries",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
+    "run.code.analysis.last.selected.profile": "pProject Default",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\20241080080010\Desktop\trabalho-arvore-avl\src" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Application.Estoque">
+    <configuration name="Estoque" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Estoque" />
+      <module name="trabalho-arvore-avl" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="Teste" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="ALTERNATIVE_JRE_PATH" value="$PROJECT_DIR$/../../../../Program Files/Java/jdk-21.0.10" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
@@ -73,6 +89,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Estoque" />
         <item itemvalue="Application.Teste" />
       </list>
     </recent_temporary>
@@ -94,6 +111,7 @@
       <updated>1778712364151</updated>
       <workItem from="1778712366731" duration="4316000" />
       <workItem from="1778717844863" duration="810000" />
+      <workItem from="1779835729966" duration="1215000" />
     </task>
     <servers />
   </component>

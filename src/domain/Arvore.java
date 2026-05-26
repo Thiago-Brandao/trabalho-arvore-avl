@@ -7,16 +7,13 @@ public class Arvore {
 
     NoArvore raiz;
 
-    // =========================
     // INSERIR
-    // =========================
+
     public void inserir(Produto produto) {
         raiz = inserirRecursivo(raiz, produto);
     }
 
-    // =========================
     // BUSCAR
-    // =========================
     public Produto buscarProduto(Integer codigo) {
 
         NoArvore resultado =
@@ -59,9 +56,8 @@ public class Arvore {
         );
     }
 
-    // =========================
     // ATUALIZAR
-    // =========================
+
     public void atualizarProduto(Produto produtoAtualizado) {
 
         Produto produto =
@@ -89,9 +85,8 @@ public class Arvore {
         }
     }
 
-    // =========================
     // LISTAR EM ORDEM
-    // =========================
+
     public List<Produto> listarEmOrdemCrescente() {
 
         List<Produto> produtos =
@@ -125,9 +120,8 @@ public class Arvore {
         }
     }
 
-    // =========================
-    // AVL
-    // =========================
+    // Árvore AVL
+
 
     private int getAltura(NoArvore no) {
         return (no == null)
@@ -290,5 +284,137 @@ public class Arvore {
         }
 
         return no;
+    }
+
+    private NoArvore excluirRecursivo(
+            NoArvore no,
+            Integer codigo
+    ) {
+
+        if (no == null) {
+            return null;
+        }
+
+        if (codigo < no.getProduto().getCodigo()) {
+
+            no.setEsquerda(
+                    excluirRecursivo(
+                            no.getEsquerda(),
+                            codigo
+                    )
+            );
+
+        } else if (codigo > no.getProduto().getCodigo()) {
+
+            no.setDireita(
+                    excluirRecursivo(
+                            no.getDireita(),
+                            codigo
+                    )
+            );
+
+        } else {
+
+            // Nó com 1 filho ou nenhum
+            if (no.getEsquerda() == null) {
+                return no.getDireita();
+            }
+
+            if (no.getDireita() == null) {
+                return no.getEsquerda();
+            }
+
+            // Nó com 2 filhos
+            NoArvore menor =
+                    menorValor(no.getDireita());
+
+            no.setProduto(menor.getProduto());
+
+            no.setDireita(
+                    excluirRecursivo(
+                            no.getDireita(),
+                            menor.getProduto().getCodigo()
+                    )
+            );
+        }
+
+        // Atualiza altura
+        no.setAltura(
+                1 + Math.max(
+                        getAltura(no.getEsquerda()),
+                        getAltura(no.getDireita())
+                )
+        );
+
+        int fator = getFatorBalanceamento(no);
+
+        // LL
+        if (fator > 1 &&
+                getFatorBalanceamento(no.getEsquerda()) >= 0) {
+
+            return rotacaoSimplesDireita(no);
+        }
+
+        // LR
+        if (fator > 1 &&
+                getFatorBalanceamento(no.getEsquerda()) < 0) {
+
+            no.setEsquerda(
+                    rotacaoSimplesEsquerda(
+                            no.getEsquerda()
+                    )
+            );
+
+            return rotacaoSimplesDireita(no);
+        }
+
+        // RR
+        if (fator < -1 &&
+                getFatorBalanceamento(no.getDireita()) <= 0) {
+
+            return rotacaoSimplesEsquerda(no);
+        }
+
+        // RL
+        if (fator < -1 &&
+                getFatorBalanceamento(no.getDireita()) > 0) {
+
+            no.setDireita(
+                    rotacaoSimplesDireita(
+                            no.getDireita()
+                    )
+            );
+
+            return rotacaoSimplesEsquerda(no);
+        }
+
+        return no;
+    }
+
+    public void excluirProduto(Integer codigo) {
+        raiz = excluirRecursivo(raiz, codigo);
+    }
+
+    public void atualizarQuantidade(
+            Integer codigo,
+            Integer novaQuantidade
+    ) {
+
+        Produto produto = buscarProduto(codigo);
+
+        if (produto != null) {
+            produto.setQuantidadeEmEstoque(novaQuantidade);
+        }
+    }
+
+    private NoArvore menorValor(NoArvore no) {
+
+        NoArvore atual = no;
+
+        while (atual.getEsquerda() != null) {
+            atual = atual.getEsquerda();
+        }
+
+        return atual;
     }
 }
