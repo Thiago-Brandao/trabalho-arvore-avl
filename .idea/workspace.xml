@@ -6,11 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="8763619f-d0e6-4aa9-bd4d-0d63557b7d93" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Estoque.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Estoque.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/domain/Arvore.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/domain/Arvore.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/domain/NoArvore.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/domain/NoArvore.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/domain/Produto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/domain/Produto.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/domain/ProdutoService.java" beforeDir="false" />
     </list>
     <list id="1deede9e-bcd4-485f-a8a5-349b2d02ff33" name="Changes by THIAGO" comment="" />
     <option name="SHOW_DIALOG" value="false" />
@@ -44,8 +40,13 @@
   "keyToString": {
     "Application.Estoque.executor": "Run",
     "Application.Teste.executor": "Debug",
+    "Downloaded.Files.Path.Enabled": "false",
     "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "Repository.Attach.Annotations": "false",
+    "Repository.Attach.JavaDocs": "false",
+    "Repository.Attach.Sources": "false",
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
     "RunOnceActivity.git.unshallow": "true",
     "RunOnceActivity.typescript.service.memoryLimit.init": "true",
     "codeWithMe.voiceChat.enabledByDefault": "false",
@@ -111,7 +112,7 @@
       <updated>1778712364151</updated>
       <workItem from="1778712366731" duration="4316000" />
       <workItem from="1778717844863" duration="810000" />
-      <workItem from="1779835729966" duration="1215000" />
+      <workItem from="1779835729966" duration="5106000" />
     </task>
     <servers />
   </component>

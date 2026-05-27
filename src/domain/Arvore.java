@@ -9,11 +9,25 @@ public class Arvore {
 
     // INSERIR
 
+    /**
+     * Insere um produto na árvore AVL utilizando
+     * o código do produto como chave.
+     *
+     * @param produto produto a ser inserido
+     */
     public void inserir(Produto produto) {
         raiz = inserirRecursivo(raiz, produto);
     }
 
     // BUSCAR
+
+    /**
+     * Busca um produto na árvore AVL a partir
+     * do código informado.
+     *
+     * @param codigo código do produto
+     * @return produto encontrado ou null
+     */
     public Produto buscarProduto(Integer codigo) {
 
         NoArvore resultado =
@@ -26,6 +40,15 @@ public class Arvore {
         return null;
     }
 
+    /**
+     * Realiza a busca recursiva de um nó
+     * na árvore AVL utilizando o código
+     * do produto como chave.
+     *
+     * @param no nó atual da árvore
+     * @param codigo código do produto
+     * @return nó encontrado ou null
+     */
     private NoArvore buscarRecursivo(
             NoArvore no,
             Integer codigo
@@ -58,6 +81,12 @@ public class Arvore {
 
     // ATUALIZAR
 
+    /**
+     * Atualiza os dados de um produto existente
+     * a partir do código informado.
+     *
+     * @param produtoAtualizado produto com os novos dados
+     */
     public void atualizarProduto(Produto produtoAtualizado) {
 
         Produto produto =
@@ -87,6 +116,10 @@ public class Arvore {
 
     // LISTAR EM ORDEM
 
+    /**
+     * Método para retornar a lista de produtos em ordem crescente
+     * @return lista de produtos em ordem crescente
+     */
     public List<Produto> listarEmOrdemCrescente() {
 
         List<Produto> produtos =
@@ -97,6 +130,13 @@ public class Arvore {
         return produtos;
     }
 
+    /**
+     * Percorre a árvore em ordem crescente e adiciona
+     * os produtos encontrados na lista informada.
+     *
+     * @param no nó atual da árvore
+     * @param produtos lista de produtos
+     */
     private void emOrdem(
             NoArvore no,
             List<Produto> produtos
@@ -122,13 +162,27 @@ public class Arvore {
 
     // Árvore AVL
 
-
+    /**
+     * Método para retornar altura da árvore AVL
+     * caso o nó for nullo retorna nulo
+     * @param no nó que será consultado
+     * @return retornado a altura ou valor nulo caso o nó for nulo.
+     */
     private int getAltura(NoArvore no) {
         return (no == null)
                 ? 0
                 : no.getAltura();
     }
 
+
+    /**
+     * Calcula o fator de balanceamento de um nó da árvore AVL.
+     * O fator é obtido pela diferença entre a altura da subárvore
+     * esquerda e da subárvore direita.
+     *
+     * @param no nó da árvore
+     * @return fator de balanceamento do nó
+     */
     private int getFatorBalanceamento(NoArvore no) {
 
         if (no == null) {
@@ -139,6 +193,13 @@ public class Arvore {
                 - getAltura(no.getDireita());
     }
 
+    /**
+     * Realiza uma rotação simples à direita em um nó da árvore AVL
+     * rotação utilizada para corrigir desbalanceamentos do tipo LL (Esquerda Esquerda)
+     *
+     * @param y nó desbalanceado
+     * @return nova raiz da subárvore após a rotação
+     */
     private NoArvore rotacaoSimplesDireita(NoArvore y) {
 
         NoArvore x = y.getEsquerda();
@@ -164,6 +225,14 @@ public class Arvore {
         return x;
     }
 
+    /**
+     * Realiza uma rotação simples à esquerda em um nó da árvore AVL.
+     * Essa rotação é utilizada para corrigir desbalanceamentos
+     * do tipo RR (Direita Direita).
+     *
+     * @param x nó desbalanceado
+     * @return nova raiz da subárvore após a rotação
+     */
     private NoArvore rotacaoSimplesEsquerda(NoArvore x) {
 
         NoArvore y = x.getDireita();
@@ -189,6 +258,15 @@ public class Arvore {
         return y;
     }
 
+    /**
+     * Insere um produto na árvore AVL de forma recursiva.
+     * Após a inserção, realiza o balanceamento da árvore
+     * por meio das rotações necessárias.
+     *
+     * @param no nó atual da árvore
+     * @param produto produto a ser inserido
+     * @return raiz atualizada da subárvore
+     */
     private NoArvore inserirRecursivo(
             NoArvore no,
             Produto produto
@@ -231,7 +309,7 @@ public class Arvore {
 
         int fator = getFatorBalanceamento(no);
 
-        // LL
+        // ESQUERDA ESQUERDA
         if (fator > 1 &&
                 produto.getCodigo()
                         < no.getEsquerda()
@@ -241,7 +319,7 @@ public class Arvore {
             return rotacaoSimplesDireita(no);
         }
 
-        // RR
+        // DIREITA DIREITA
         if (fator < -1 &&
                 produto.getCodigo()
                         > no.getDireita()
@@ -251,7 +329,7 @@ public class Arvore {
             return rotacaoSimplesEsquerda(no);
         }
 
-        // LR
+        // ESQUERDA DIREITA
         if (fator > 1 &&
                 produto.getCodigo()
                         > no.getEsquerda()
@@ -267,7 +345,7 @@ public class Arvore {
             return rotacaoSimplesDireita(no);
         }
 
-        // RL
+        // DIREITA ESQUERDA
         if (fator < -1 &&
                 produto.getCodigo()
                         < no.getDireita()
@@ -286,6 +364,15 @@ public class Arvore {
         return no;
     }
 
+    /**
+     * Remove um produto da árvore AVL de forma recursiva.
+     * Após a remoção, realiza o balanceamento da árvore
+     * por meio das rotações necessárias.
+     *
+     * @param no nó atual da árvore
+     * @param codigo código do produto a ser removido
+     * @return raiz atualizada da subárvore
+     */
     private NoArvore excluirRecursivo(
             NoArvore no,
             Integer codigo
@@ -348,14 +435,14 @@ public class Arvore {
 
         int fator = getFatorBalanceamento(no);
 
-        // LL
+        // ESQUERDA ESQUERDA
         if (fator > 1 &&
                 getFatorBalanceamento(no.getEsquerda()) >= 0) {
 
             return rotacaoSimplesDireita(no);
         }
 
-        // LR
+        // ESQUERDA DIREITA
         if (fator > 1 &&
                 getFatorBalanceamento(no.getEsquerda()) < 0) {
 
@@ -368,14 +455,14 @@ public class Arvore {
             return rotacaoSimplesDireita(no);
         }
 
-        // RR
+        // DIREITA DIREITA
         if (fator < -1 &&
                 getFatorBalanceamento(no.getDireita()) <= 0) {
 
             return rotacaoSimplesEsquerda(no);
         }
 
-        // RL
+        // DIREITA ESQUERDA
         if (fator < -1 &&
                 getFatorBalanceamento(no.getDireita()) > 0) {
 
@@ -391,10 +478,24 @@ public class Arvore {
         return no;
     }
 
+    /**
+     * método para exclusão do produto da árvoreAVL
+     * utilizando o código do produto como a chave
+     * de busca.
+     *
+     * @param codigo código do produto a ser removido
+     */
     public void excluirProduto(Integer codigo) {
         raiz = excluirRecursivo(raiz, codigo);
     }
 
+    /**
+     * Atualiza a quantidade em estoque de um produto
+     * a partir do código informado.
+     *
+     * @param codigo código do produto
+     * @param novaQuantidade nova quantidade em estoque
+     */
     public void atualizarQuantidade(
             Integer codigo,
             Integer novaQuantidade
@@ -407,6 +508,14 @@ public class Arvore {
         }
     }
 
+    /**
+     * Retorna o nó com o menor valor de uma subárvore.
+     * Esse método é utilizado no processo de remoção
+     * de nós com dois filhos.
+     *
+     * @param no raiz da subárvore
+     * @return nó com o menor valor encontrado
+     */
     private NoArvore menorValor(NoArvore no) {
 
         NoArvore atual = no;
